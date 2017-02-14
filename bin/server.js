@@ -44,6 +44,6 @@ browserSync.init({
     files: [
         'css/**/*.css',
         'src/**/*.js',
-        'index.html'
+        '*.html'
     ]
 });

@@ -11,7 +11,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('[name].css', {allChunks: true}),
-    new CopyWebpackPlugin([{ from: 'index.html' }])
+    new CopyWebpackPlugin([{ from: '*.html' }])
   ],
   module: {
     loaders: [
@@ -50,7 +50,7 @@ module.exports = {
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&mimetype=image/svg+xml&name=img/[name].[ext]'
+        loader: 'file?name=img/[name].[ext]'
       }
     ]
   },
@@ -65,7 +65,7 @@ module.exports = {
   devServer: {
     port: 3000,
     historyApiFallback: {
-      index: 'index.html'
+      index: '*.html'
     }
   }
 };
